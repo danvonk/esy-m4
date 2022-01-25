@@ -70,7 +70,7 @@ if test "$gl_gcc_warnings" = yes; then
   AC_CACHE_CHECK([whether pragma GCC diagnostic push works],
     [M4_cv_gcc_pragma_push_works], [
     save_CFLAGS=$CFLAGS
-    CFLAGS='-Wunknown-pragmas ror'
+    CFLAGS='-Wunknown-pragmas' 
     AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
       #pragma GCC diagnostic push
       #pragma GCC diagnostic pop
