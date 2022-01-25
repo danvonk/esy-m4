@@ -70,7 +70,7 @@ if test "$gl_gcc_warnings" = yes; then
   AC_CACHE_CHECK([whether pragma GCC diagnostic push works],
     [M4_cv_gcc_pragma_push_works], [
     save_CFLAGS=$CFLAGS
-    CFLAGS='-Wunknown-pragmas -Werror'
+    CFLAGS='-Wunknown-pragmas ror'
     AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
       #pragma GCC diagnostic push
       #pragma GCC diagnostic pop
@@ -93,6 +93,7 @@ if test "$gl_gcc_warnings" = yes; then
   nw="$nw -Wsign-conversion"        # Too many warnings for now
   nw="$nw -Wcast-qual"              # Too many warnings for now
   nw="$nw -Wswitch-enum"            # Too many warnings for now
+  nw="$nw -Wformat-nonliteral"      # Too many warnings for now
   # gcc 4.4.6 complains enum-compare is C++ only; gcc 4.7.0 implies it in -Wall
   nw="$nw -Wenum-compare"
 
@@ -113,6 +114,7 @@ if test "$gl_gcc_warnings" = yes; then
     nw="$nw -Wmissing-prototypes"
     nw="$nw -Wmissing-declarations"
     nw="$nw -Wunreachable-code"
+    nw="$nw -Wformat-nonliteral"
   fi
 
   gl_MANYWARN_ALL_GCC([ws])

@@ -1,0 +1,13 @@
+{
+  "name": "esy-m4",
+  "version": "1.4.18",
+  "description": "m4 packaged for esy",
+  "esy": {
+    "buildsInSource": true,
+    "build": [
+      "./configure #{os == 'windows' ? '--host x86_64-w64-mingw32': '' } --disable-dependency-tracking --prefix=#{self.install}",
+      "make -j8"
+    ],
+    "install": "make install"
+  }
+}
